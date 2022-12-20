@@ -15,7 +15,7 @@
             <input type="text" class="form-control add-c" id="in-name" name="nama" maxlength="80" required />
 
             <label>Jenis Kelamin:</label>
-            <select class="form-select add-c" form="add-form" name="jk">
+            <select class="form-select add-c" form="add-form" id="in-jk" name="jk">
               <option value="P">Pria</option>
               <option value="W">Wanita</option>
             </select>
@@ -24,10 +24,10 @@
             <input type="date" class="form-control add-c" id="in-bd" name="bd" required />
 
             <label>Gaji:</label>
-            <input type="number" class="form-control add-c" name="gaji" required />
+            <input type="number" class="form-control add-c" id="in-gaji" name="gaji" required />
 
             <label>Departemen:</label>
-            <select class="form-select add-c" form="add-form" name="dep">
+            <select class="form-select add-c" form="add-form" id="in-dep" name="dep">
               <option selected value="Akuntansi">Akuntansi</option>
               <option value="Logistik">Logistik</option>
               <option value="Humas">Humas</option>
@@ -37,7 +37,7 @@
             </select>
 
             <label>Jabatan:</label>
-            <select class="form-select add-c" form="add-form" name="jab">
+            <select class="form-select add-c" form="add-form" id="in-jab" name="jab">
               <option selected value="Pegawai">Pegawai</option>
               <option value="Manajer">Manajer</option>
             </select>
