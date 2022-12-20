@@ -3,7 +3,7 @@ include '../config.php';
 echo "<script>console.log('IN')</script>";
 
 if (!empty($_POST)) {
-  $q = "INSERT INTO pegawai(id_pegawai, nama, jenis_kelamin, tgl_lahir, gaji, departemen, jabatan) VALUES(NULL, '"
+  $q = "INSERT INTO pegawai(nama, jenis_kelamin, tgl_lahir, gaji, departemen, jabatan) VALUES('"
     . $_POST['nama'] . "', '" . $_POST['jk'] . "', '" . $_POST['bd'] . "', '" . $_POST['gaji'] . "', '" . $_POST['dep']
     . "', '" . $_POST['jab'] . "');";
   $res = mysqli_query($con, $q);
