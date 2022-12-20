@@ -6,33 +6,10 @@
   <?php include './nav.php' ?>
 
   <!--Begin Contents-->
-  <div class="container-fluid" id="index-content">
-    <div class="row fullh">
-      <!--Login-->
-      <div class="col-7 fullh" id="index-login-sec">
-        <div id="login-box">
+  <div class="container-fluid" id="add-content">
+    <div class="row">
+      <div class="col">
 
-          <form id="login-form">
-            <h1>Login</h1>
-            <div class="mb-3">
-              <label class="form-label">Username</label>
-              <input type="email" class="form-control" id="log-email" name="log-email" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Password</label>
-              <input type="password" class="form-control" id="log-pw" name="log-pw" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <span id="index-noacc">Don't have an account? <a href="./register.html">Register here</a></span>
-
-          </form>
-
-        </div>
-      </div>
-      <!--Blurb Text-->
-      <div class="col-5 fullh" id="index-blurb">
-        <p>Welcome to</p>
-        <h2>Sistem Manajemen Karyawan</h2>
       </div>
     </div>
   </div>
