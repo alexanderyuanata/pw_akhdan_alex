@@ -1,3 +1,47 @@
+<?php 
+
+include 'php/config.php';
+
+error_reporting(0);
+
+session_start();
+
+if (isset($_SESSION['username'])) {
+    header("Location: login.php");
+}
+
+if (isset($_POST['submit'])) {
+ $username = $_POST['reg_user'];
+ $password = md5($_POST['reg_pass']);
+ $reg_cpw = md5($_POST['reg_cpw']);
+
+ if ($password == $reg_cpw) {
+  $sql = "SELECT * FROM accounts WHERE username='$username'";
+  $result = mysqli_query($con, $sql);
+  if (!$result->num_rows > 0) {
+   $sql = "INSERT INTO accounts (username, password)
+     VALUES ('$username', '$password')";
+   $result = mysqli_query($con, $sql);
+   if ($result) {
+    echo "<script>alert('Selamat, registrasi berhasil!')</script>";
+    $username = "";
+    $_POST['reg_pass'] = "";
+    $_POST['reg_cpw'] = "";
+    header("Location: index.php");
+   } else {
+    echo "<script>alert('Woops! Terjadi kesalahan.')</script>";
+   }
+  } else {
+   echo "<script>alert('Woops! Username Sudah Terdaftar.')</script>";
+  }
+  
+ } else {
+  echo "<script>alert('Password Tidak Sesuai')</script>";
+ }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,10 +101,10 @@
             <a class="nav-link" href="#">Account</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./index.html">Login</a>
+            <a class="nav-link" href="./index.php">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./register.html">Register</a>
+            <a class="nav-link" href="./register.php">Register</a>
           </li>
         </ul>
 
@@ -76,18 +120,22 @@
       <div class="col-7 fullh" id="index-login-sec">
         <div id="login-box">
 
-          <form id="login-form">
-            <h1>Login</h1>
-            <div class="mb-3">
-              <label class="form-label">Username</label>
-              <input type="email" class="form-control" id="log-email" name="log-email" required>
+          <form action="" method="POST">
+            <h1>Register</h1>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" required name="reg_user" id="reg_user" placeholder="username" value="<?php echo $reg_uaer; ?>">
+              <label for="floatingUsername">username</label>
             </div>
-            <div class="mb-3">
-              <label class="form-label">Password</label>
-              <input type="password" class="form-control" id="log-pw" name="log-pw" required>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" required name="reg_pass" id="reg_pass" placeholder="Password" value="<?php echo $reg_pass; ?>">
+              <label for="floatingPassword">Password</label>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <span id="index-noacc">Don't have an account? <a href="./register.html">Register here</a></span>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" required name="reg_cpw" id="reg_cpw" placeholder="Confirm Password" value="<?php echo $reg_cpw; ?>">
+              <label for="floatingCPassword">Confirm Password</label>
+            </div>
+            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+            <span id="index-noacc">Already have an account? <a href="index.php">Login</a></span>
 
           </form>
 

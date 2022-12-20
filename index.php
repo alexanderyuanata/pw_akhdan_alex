@@ -1,3 +1,32 @@
+<?php 
+
+include 'php/config.php';
+
+error_reporting(0);
+
+session_start();
+
+if (isset($_SESSION['username'])) {
+    header("Location: php/index.php");
+}
+
+if (isset($_POST['submit'])) {
+ $username = $_POST['log_user'];
+ $password = md5($_POST['log_pass']);
+
+ $sql = "SELECT * FROM accounts WHERE username='$username' AND password='$password'";
+ $result = mysqli_query($con, $sql);
+ if ($result->num_rows > 0) {
+  $row = mysqli_fetch_assoc($result);
+  $_SESSION['username'] = $row['username'];
+  header("Location: php/index.php");
+ } else {
+  echo "<script>alert('username atau password Anda salah. Silahkan coba lagi!')</script>";
+ }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,10 +86,10 @@
             <a class="nav-link" href="#">Account</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./index.html">Login</a>
+            <a class="nav-link" href="./index.php">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./register.html">Register</a>
+            <a class="nav-link" href="./register.php">Register</a>
           </li>
         </ul>
 
@@ -76,18 +105,18 @@
       <div class="col-7 fullh" id="index-login-sec">
         <div id="login-box">
 
-          <form id="reg-form">
-            <h1>Register</h1>
-            <div class="mb-3">
-              <label class="form-label">Username</label>
-              <input type="email" class="form-control" id="reg-user" name="reg_user" required>
+          <form action="" method="POST" id="login-form">
+            <h1>Login</h1>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" required name="log_user" id="log_user" placeholder="username" value="<?php echo $log_uaer; ?>">
+              <label for="floatingUsername">username</label>
             </div>
-            <div class="mb-3">
-              <label class="form-label">Password</label>
-              <input type="password" class="form-control" id="reg-pw" name="reg_pw" required>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" required name="log_pass" id="log_pass" placeholder="Password" value="<?php echo $log_pass; ?>">
+              <label for="floatingPassword">Password</label>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <span id="index-noacc">Already have an account? <a href="./index.html">Login</a></span>
+            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+            <span id="index-noacc">Don't have an account? <a href="./register.php">Register here</a></span>
 
           </form>
 

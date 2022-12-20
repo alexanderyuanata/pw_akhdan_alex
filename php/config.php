@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db = "pw_akhdan_alex";
+$db = "account";
 
 $con = mysqli_connect($host, $user, $pass, $db);
 $message = [];
