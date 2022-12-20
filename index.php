@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
             <h1>Login</h1>
             <div class="form-floating mb-3">
               <input type="text" class="form-control" required name="log_user" id="log_user" placeholder="username"
-                value="<?php echo $log_uaer; ?>">
+                value="<?php echo $log_user; ?>">
               <label for="floatingUsername">username</label>
             </div>
             <div class="form-floating mb-3">
