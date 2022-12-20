@@ -8,11 +8,10 @@
 
   <!--Begin Contents-->
   <div class="container-fluid" id="home-content">
-    <div class="row fullh">
+    <div class="row">
 
     </div>
   </div>
-
 
   <!--End Contents-->
 
