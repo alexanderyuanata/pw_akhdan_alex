@@ -1,21 +1,44 @@
+<?php
+include '../config.php';
+echo "<script>console.log('IN')</script>";
+
+if (!empty($_POST)) {
+  $q = "INSERT INTO pegawai(id_pegawai, nama, jenis_kelamin, tgl_lahir, gaji, departemen, jabatan) VALUES(NULL, '"
+    . $_POST['nama'] . "', '" . $_POST['jk'] . "', '" . $_POST['bd'] . "', '" . $_POST['gaji'] . "', '" . $_POST['dep']
+    . "', '" . $_POST['jab'] . "');";
+  $res = mysqli_query($con, $q);
+  echo "<script>console.log('" . $res . "')</script>";
+
+  if ($res) {
+    echo "<script>alert('Pegawai berhasil ditambah!')</script>";
+    header("Location: pegawai.php");
+  } else {
+    echo "<script>alert('Pegawai gagal ditambah!')</script>";
+  }
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
-<?php include './meta.php' ?>
+
+<?php include 'meta-pegawai.php' ?>
 
 <body>
-  <?php include './nav.php' ?>
+  <?php include 'nav-pegawai.php' ?>
 
   <!--Begin Contents-->
   <div class="container-fluid" id="add-content">
     <div class="row fullh">
       <div class="col">
         <div id="add-div">
-          <form id="add-form">
+          <form id="add-pegawaiform">
             <label>Nama Karyawan:</label>
             <input type="text" class="form-control add-c" id="in-name" name="nama" maxlength="80" required />
 
             <label>Jenis Kelamin:</label>
-            <select class="form-select add-c" form="add-form" id="in-jk" name="jk">
+            <select class="form-select add-c" id="in-jk" name="jk">
               <option value="P">Pria</option>
               <option value="W">Wanita</option>
             </select>
@@ -42,13 +65,12 @@
               <option value="Manajer">Manajer</option>
             </select>
 
-            <button type="submit" class="btn btn-primary add-c">Tambah Pegawai</button>
+            <button type="submit" class="btn btn-primary add-c" name="submit">Tambah Pegawai</button>
           </form>
         </div>
       </div>
     </div>
   </div>
-
 
   <!--End Contents-->
 

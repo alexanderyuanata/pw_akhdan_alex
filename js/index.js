@@ -9,18 +9,13 @@ $(document).ready(function () {
       type: "POST",
       url: "register.php",
       data: sent_data,
-    }).done(function (response) {
-      window.alert(response);
-      if (response == "Akun berhasil dibuat") {
-        window.location.replace("./home.html");
-      }
     });
     event.preventDefault();
   });
 
-  $("#add-form").submit(function (event) {
+  $("#add-pegawaiform").submit(function (event) {
     var sent_data = {
-      nama: $("#id-name").val(),
+      nama: $("#in-name").val(),
       jk: $("#in-jk").val(),
       bd: $("#in-bd").val(),
       gaji: $("#in-gaji").val(),
@@ -30,11 +25,53 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: "add-act.php",
+      url: "add-pegawai.php",
       data: sent_data,
     }).done(function (response) {
-      window.alert(response);
+      window.alert("Pegawai berhasil ditambah!");
+      window.location.replace("./pegawai.php");
     });
+
+    event.preventDefault();
+  });
+
+  $("#edit-pegawaiform").submit(function (event) {
+    var sent_data = {
+      id: $("#edit-id").val(),
+      nama: $("#edit-name").val(),
+      jk: $("#edit-jk").val(),
+      bd: $("#edit-bd").val(),
+      gaji: $("#edit-gaji").val(),
+      dep: $("#edit-dep").val(),
+      jab: $("#edit-jab").val(),
+    };
+
+    $.ajax({
+      type: "POST",
+      url: "edit-pegawai.php",
+      data: sent_data,
+    }).done(function (response) {
+      window.alert("Pegawai berhasil diedit!");
+      window.location.replace("./pegawai.php");
+    });
+
+    event.preventDefault();
+  });
+
+  $("#delete-pegawaiform").submit(function (event) {
+    var sent_data = {
+      id: $("#delete-id").val(),
+    };
+
+    $.ajax({
+      type: "POST",
+      url: "delete-pegawai.php",
+      data: sent_data,
+    }).done(function (response) {
+      window.alert("Pegawai berhasil dihapus!");
+      window.location.replace("./pegawai.php");
+    });
+
     event.preventDefault();
   });
 });

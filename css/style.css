@@ -126,3 +126,34 @@
   height: 8vh;
   width: 100%;
 }
+
+#pegawai-content {
+  background-color: rgb(53, 41, 108);
+  height: 100vh;
+}
+
+#tabel-pegawai {
+  width: 80vw;
+  border-radius: 1.5vh;
+  margin: auto;
+  margin-top: 5vh;
+  position: relative;
+  background-color: white;
+  padding: 1vh;
+}
+
+#tabel-pegawai a {
+  cursor: pointer;
+  font-weight: bolder;
+  text-decoration: none !important;
+  transition: 0.35s ease-in-out;
+}
+
+#tabel-pegawai a:hover {
+  color: rgb(121, 48, 210);
+}
+
+#exc {
+  color: rgb(209, 209, 209);
+  font-size: 40px;
+}

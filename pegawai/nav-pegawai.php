@@ -5,10 +5,10 @@
       <!--Links for Webpages-->
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="./home.php">Dashboard</a>
+          <a class="nav-link" href="../home.php">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./pegawai/pegawai.php">Daftar Karyawan</a>
+          <a class="nav-link" href="./pegawai.php">Daftar Karyawan</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Daftar Barang</a>
@@ -19,7 +19,7 @@
             Manajemen
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="./pegawai/add-pegawai.php">Karyawan</a></li>
+            <li><a class="dropdown-item" href="./add-pegawai.php">Karyawan</a></li>
             <li><a class="dropdown-item" href="#">Barang</a></li>
           </ul>
         </li>
@@ -33,10 +33,10 @@
         }
         ?>
         <li class="nav-item">
-          <a class="nav-link" href="./index.php">Login</a>
+          <a class="nav-link" href="../index.php">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./register.php">Register</a>
+          <a class="nav-link" href="../register.php">Register</a>
         </li>
       </ul>
 
