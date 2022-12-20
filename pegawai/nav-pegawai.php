@@ -27,11 +27,9 @@
 
       <!--Links for Login & Registration-->
       <ul class="navbar-nav" id="nav-login">
-        <?php
-        if (isset($_SESSION['username'])) {
-          echo '<li class="nav-item"><a class="nav-link" href="#">Logout</a></li>';
-        }
-        ?>
+        <li class="nav-item">
+          <a class="nav-link" href="../logout.php">Logout</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="../index.php">Login</a>
         </li>
