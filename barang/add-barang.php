@@ -3,16 +3,19 @@ include '../config.php';
 echo "<script>console.log('IN')</script>";
 
 if (!empty($_POST) && isset($_POST['submit'])) {
-  $q = "INSERT INTO barang(nama, harga, stok) VALUES('"
-    . $_POST['nama'] . "', '" . $_POST['harga'] . "', '" . $_POST['stok'] ."');";
+  $b_nama = $_POST['nama'];
+  $b_harga = $_POST['harga'];
+  $b_stok = $_POST['stok'];
+
+  $q = "INSERT INTO barang(nama, harga, stok) VALUES('$b_nama', '$b_harga', '$b_stok');";
   $res = mysqli_query($con, $q);
   echo "<script>console.log('" . $res . "')</script>";
 
   if ($res) {
-    echo "<script>alert('barang berhasil ditambah!')</script>";
+    echo "<script>alert('Barang berhasil ditambah!')</script>";
     header("Location: barang.php");
   } else {
-    echo "<script>alert('barang gagal ditambah!')</script>";
+    echo "<script>alert('Barang gagal ditambah!')</script>";
   }
 
 }
