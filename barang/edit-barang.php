@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
 
   <!--Begin Contents-->
   <div class="container-fluid" id="add-content">
-    <div class="row fullh">
+    <div class="row fullh add-barang">
       <div class="col">
         <div id="add-div">
           <form method="POST" action="">

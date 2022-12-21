@@ -65,32 +65,26 @@ if (isset($_POST['submit'])) {
   <!--Navbar-->
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="./home.html">
-        <img src="./img/logo.png" width="30" height="30">
-      </a>
-
       <div class="collapse navbar-collapse" id="navbar">
         <!--Links for Webpages-->
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">Dashboard</a>
+            <a class="nav-link" href="./home.php">Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Karyawan</a>
+            <a class="nav-link" href="./pegawai/pegawai.php">Daftar Karyawan</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pencarian</a>
+            <a class="nav-link" href="./barang/barang.php">Daftar Barang</a>
           </li>
           <!--Dropdown-->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Manajemen
+              Tambah
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Karyawan</a></li>
-              <li><a class="dropdown-item" href="#">Jabatan</a></li>
-              <li><a class="dropdown-item" href="#">Departemen</a></li>
-              <li><a class="dropdown-item" href="#">Cabang</a></li>
+              <li><a class="dropdown-item" href="./pegawai/add-pegawai.php">Karyawan</a></li>
+              <li><a class="dropdown-item" href="./barang/add-barang.php">Barang</a></li>
             </ul>
           </li>
         </ul>
@@ -98,13 +92,10 @@ if (isset($_POST['submit'])) {
         <!--Links for Login & Registration-->
         <ul class="navbar-nav" id="nav-login">
           <li class="nav-item">
-            <a class="nav-link" href="#">Account</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="./index.php">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./register.php">Register</a>
+            <a class="nav-link" href="#">Register</a>
           </li>
         </ul>
 
@@ -122,17 +113,17 @@ if (isset($_POST['submit'])) {
 
           <form action="" method="POST">
             <h1>Register</h1>
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-2">
               <input type="text" class="form-control" required name="reg_user" id="reg_user" placeholder="username"
                 value="<?php echo $reg_user; ?>">
               <label for="floatingUsername">username</label>
             </div>
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-2">
               <input type="password" class="form-control" required name="reg_pass" id="reg_pass" placeholder="Password"
                 value="<?php echo $reg_pass; ?>">
               <label for="floatingPassword">Password</label>
             </div>
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-2">
               <input type="password" class="form-control" required name="reg_cpw" id="reg_cpw"
                 placeholder="Confirm Password" value="<?php echo $reg_cpw; ?>">
               <label for="floatingCPassword">Confirm Password</label>

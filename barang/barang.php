@@ -14,7 +14,7 @@ $q = mysqli_query($con, "SELECT * FROM barang ORDER BY `id` ASC");
 
   <!--Begin Contents-->
   <div class="container-fluid" id="pegawai-content">
-    <div class="row fullh">
+    <div class="row fullh add-barang">
       <div class="col">
         <div id="tabel-pegawai">
           <table class="table" id="student-table">

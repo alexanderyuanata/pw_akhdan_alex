@@ -32,8 +32,8 @@ if (!empty($_POST) && isset($_POST['submit'])) {
   <?php include '../pegawai/nav-pegawai.php' ?>
 
   <!--Begin Contents-->
-  <div class="container-fluid" id="add-content">
-    <div class="row fullh">
+  <div class="container-fluid" id="add-content" style="height: 100%;">
+    <div class="row fullh add-barang">
       <div class="col">
         <div id="add-div">
           <form method="POST">

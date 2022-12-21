@@ -11,16 +11,16 @@
           <a class="nav-link" href="./pegawai/pegawai.php">Daftar Karyawan</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Daftar Barang</a>
+          <a class="nav-link" href="./barang/barang.php">Daftar Barang</a>
         </li>
         <!--Dropdown-->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Manajemen
+            Tambah
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="./pegawai/add-pegawai.php">Karyawan</a></li>
-            <li><a class="dropdown-item" href="#">Barang</a></li>
+            <li><a class="dropdown-item" href="./barang/add-barang.php">Barang</a></li>
           </ul>
         </li>
       </ul>
@@ -29,12 +29,6 @@
       <ul class="navbar-nav" id="nav-login">
         <li class="nav-item">
           <a class="nav-link" href="./logout.php">Logout</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./index.php">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./register.php">Register</a>
         </li>
       </ul>
 

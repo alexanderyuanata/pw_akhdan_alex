@@ -1,3 +1,9 @@
+<?php
+if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
+  // session isn't started
+  session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,8 +14,20 @@
 
   <!--Begin Contents-->
   <div class="container-fluid" id="home-content">
-    <div class="row">
-
+    <div class="row" id="manage-pegawai">
+      <img src='./img/management-white-shadow.png'>
+      <span id="manage-blurb">
+        <h3>SATU HUB, SEMUA PENGATURAN</h3>
+        <p>
+          Selamat datang di Sistem Informasi Karyawan Atma, sebuah
+          hub untuk segala pengaturan data dalam perusahaan. Anda telah
+          login sebagai <span><?php echo $_SESSION['username'] ?></span> dengan
+          hak <span>administrator</span>.<br>
+          Mulai mengatur database dengan link-link berikut:
+        </p>
+        <a href="./pegawai/pegawai.php"><button>Data Karyawan</button></a>
+        <a href="./barang/barang.php"><button>Data Barang</button></a>
+      </span>
     </div>
   </div>
 

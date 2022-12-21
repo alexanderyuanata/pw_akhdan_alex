@@ -30,7 +30,7 @@ if (!empty($_POST)) {
 
   <!--Begin Contents-->
   <div class="container-fluid" id="add-content">
-    <div class="row fullh">
+    <div class="row fullh add-pegawai">
       <div class="col">
         <div id="add-div">
           <form id="add-pegawaiform">
